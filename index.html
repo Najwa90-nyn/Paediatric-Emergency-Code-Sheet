@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paediatric Emergency Code Sheet</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Introduction Page -->
+  <div id="intro-page" class="container">
+    <h1>Welcome to Paediatric Emergency Code Sheet</h1>
+    <p>
+      Paediatric emergencies require precise and timely management. This tool provides an automated calculation of 
+      essential parameters, including endotracheal tube sizes, defibrillation and cardioversion joules, and resuscitation 
+      medication dosages. By entering the age and weight of the patient, the tool generates accurate, evidence-based 
+      results tailored to the patient's needs. This ensures a streamlined approach during critical situations, reducing 
+      errors and enhancing patient safety.
+    </p>
+    <p class="signature">
+      <strong>Done by SN: Najwa Al-Zadjali</strong>
+    </p>
+    <button id="start-button">Start</button>
+  </div>
+
+  <!-- Code Sheet Page -->
+  <div id="code-sheet-page" class="container" style="display: none;">
+    <h1>Paediatric Emergency Code Sheet</h1>
+    <form id="calculator-form">
+      <div class="input-group">
+        <label for="age">Age (years):</label>
+        <input type="number" id="age" name="age" min="0" required>
+      </div>
+      <div class="input-group">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" min="1" required>
+      </div>
+      <button type="submit">Generate Code Sheet</button>
+    </form>
+
+    <div id="results-container">
+      <h2>Results</h2>
+
+      <!-- ETT Sizes Table -->
+      <h3>ETT Sizes</h3>
+      <table id="ett-table" class="colored-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Size</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- ETT Sizes will be populated here -->
+        </tbody>
+      </table>
+
+      <!-- Defibrillation/Cardioversion Table -->
+      <h3>Defibrillation & Cardioversion</h3>
+      <table id="joules-table" class="colored-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Minimum Joules</th>
+            <th>Maximum Joules</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Joules values will be populated here -->
+        </tbody>
+      </table>
+
+      <!-- Resuscitation Medications Table -->
+      <h3>Resuscitation Medications</h3>
+      <table id="medication-table" class="colored-table">
+        <thead>
+          <tr>
+            <th>Medication</th>
+            <th>Dose Range (min-max)</th>
+            <th>Calculated Dose (Minimum)</th>
+            <th>Calculated Dose (Maximum)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Medication doses will be populated here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
